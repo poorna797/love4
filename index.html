@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Eternal Echoes</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+In the serene town of Harmony Grove, where time seemed to move at its own unhurried pace, there lived a young woman named Sophia. Her days were woven with the gentle melodies of the wind rustling through the ancient willow trees and the sweet fragrance of blooming wildflowers. Sophia, a painter with an affinity for capturing the ethereal beauty of nature, found solace in the quiet embrace of her surroundings.
+
+One fateful day, as she strolled along the banks of the tranquil river that meandered through Harmony Grove, Sophia noticed a solitary figure sketching by the water's edge. Intrigued, she approached the artist, and their eyes met in a moment that felt like a prelude to a timeless story.
+
+The artist, a soulful young man named Gabriel, shared Sophia's passion for the arts. His sketches, like whispers of a hidden world, spoke of emotions that resonated with Sophia's heart. As they exchanged stories and dreams, their connection deepened into a bond that felt as natural as the ebb and flow of the river beside them.
+
+Seasons danced by, each leaving its mark on the canvas of their shared experiences. Sophia and Gabriel painted their love story with the vibrant hues of laughter, the gentle strokes of understanding, and the bold strokes of shared adventures. Their days became a masterpiece of shared sunsets and quiet moments, a testament to the profound beauty that love could bring to even the simplest of lives.
+
+Yet, as time passed, Harmony Grove revealed its mystical secrets. Legend had it that the town held a magical well hidden deep within the woods—a well with the power to grant one eternal wish. Sophia and Gabriel, curious and deeply in love, embarked on a journey to find this well, guided by the hope that their love could be immortalized in the heart of Harmony Grove.
+
+Through the enchanting forest, they discovered the well, surrounded by the soft glow of fireflies. Holding hands, they made a wish, their hearts beating in unison. Little did they know that their wish would be granted in a way they could never have imagined.
+
+As the years unfolded, Sophia and Gabriel continued to age, but their love remained untouched by the passage of time. Harmony Grove became a haven for eternal love, and the echoes of their laughter and the whispers of their shared dreams lingered in the air, carried by the same wind that had witnessed the beginning of their story.
+
+In Harmony Grove, where the river flowed with the stories of generations, Sophia and Gabriel's love became a timeless melody—an eternal echo that resonated through the town's ancient willow trees, the magical well, and the hearts of those who believed in the enduring magic of true love.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
